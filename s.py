@@ -7,10 +7,7 @@ def fetcher(url):
 	r = requests.get(url)
 	data  = bs(r.content,'html.parser')
 	td = data.findAll("td")
-	for i in td:
-		if i.get_text() == " SGPA":
-			c = td[td.index(i)+1]
-	print("Name = ",td[4].text ," SGPA = ",c.text)
+	print("Name = ",td[4].text ," SGPA = ",td[146].text)
 def fetch():
 	for i in range(1,52):
 		if i<10:
